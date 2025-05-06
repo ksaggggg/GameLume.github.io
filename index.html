@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Apps, Xd, Ksaggggg, Popular, TikTok, Instagram, Telegram, Minecraft, Roblox, Chess, Pinterest, Duolingo, Spotify, JastiLegend">
+  <meta name="description" content="This site has information about Top apps among Youth!">
+  <link rel="shortcut icon" href="photo.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameLume: Популярні додатки серед молоді</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&family=Inter:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="stars-bg"></canvas>
+  <header class="neon-board">
+    <div class="header-left">
+      <div class="logo">
+        <svg class="logo-joystick" width="48" height="38" viewBox="0 0 54 38" fill="none">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#2FF6FF" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#2FF6FF" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="shadow" x="-10" y="-10" width="74" height="58">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2FF6FF" flood-opacity="0.7"/>
+            </filter>
+          </defs>
+          <path d="M6 30 Q2 20 12 10 Q27 0 42 10 Q52 20 48 30 Q45 36 27 36 Q9 36 6 30Z"
+                fill="url(#glow)" stroke="#2FF6FF" stroke-width="2.5" filter="url(#shadow)" />
+          <circle class="joy-btn joy-btn-left" cx="16" cy="19" r="3.2" fill="#111" stroke="#2FF6FF" stroke-width="1.5"/>
+          <circle class="joy-btn joy-btn-left-glow" cx="16" cy="19" r="6" fill="url(#glow)" opacity="0.7"/>
+          <circle class="joy-btn joy-btn-right" cx="38" cy="19" r="3.2" fill="#111" stroke="#2FF6FF" stroke-width="1.5"/>
+          <circle class="joy-btn joy-btn-right-glow" cx="38" cy="19" r="6" fill="url(#glow)" opacity="0.7"/>
+          <ellipse class="joy-btn joy-btn-center" cx="27" cy="13" rx="2.2" ry="2.2" fill="#2FF6FF" filter="url(#shadow)" />
+          <rect x="13.5" y="25.5" width="5" height="1.2" rx="0.6" fill="#2FF6FF" />
+          <rect x="15.9" y="23.1" width="1.2" height="5" rx="0.6" fill="#2FF6FF" />
+          <path d="M12 10 Q27 0 42 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+          <path d="M6 30 Q2 20 12 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+          <path d="M48 30 Q52 20 42 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+        </svg>
+        <span class="neon-title">GameLume</span>
+      </div>
+      <span class="neon-slogan" data-i18n="slogan"></span>
+    </div>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button id="lang-btn" class="neon-btn">UA</button>
+        <div id="lang-panel" class="lang-panel">
+          <button class="lang-option" data-lang="uk">UA</button>
+          <button class="lang-option" data-lang="en">EN</button>
+        </div>
+      </div>
+      <button id="menu-btn" class="menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav id="side-menu" class="side-menu">
+    <div class="menu-blur"></div>
+    <div class="menu-content">
+      <div class="menu-title neon-menu" data-i18n="menu"></div>
+      <div class="menu-links">
+        <div class="menu-col">
+          <a href="#" class="menu-link neon-link" data-app="tiktok">TikTok</a>
+          <a href="#" class="menu-link neon-link" data-app="instagram">Instagram</a>
+          <a href="#" class="menu-link neon-link" data-app="telegram">Telegram</a>
+          <a href="#" class="menu-link neon-link" data-app="minecraft">Minecraft</a>
+        </div>
+        <div class="menu-col">
+          <a href="#" class="menu-link neon-link" data-app="roblox">Roblox</a>
+          <a href="#" class="menu-link neon-link" data-app="pinterest">Pinterest</a>
+          <a href="#" class="menu-link neon-link" data-app="duolingo">Duolingo</a>
+          <a href="#" class="menu-link neon-link" data-app="spotify">Spotify</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section class="app-section">
+      <div class="app-img floating-img" id="app-img">
+        <img src="https://protocol.ua/userfiles/client_banners_html5/test/image6964781.jpg" alt="apps"/>
+        <span class="img-placeholder" data-i18n="imgPlaceholder"></span>
+      </div>
+      <div class="app-info">
+        <h1 class="app-title" id="app-title"></h1>
+        <p class="app-desc" id="app-desc"></p>
+        <div class="app-stats">
+          <div class="stat-card">
+            <span class="stat-label" id="stat-downloads"></span>
+            <span class="stat-value" id="stat-downloads-val"></span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label" id="stat-rating"></span>
+            <span class="stat-value" id="stat-rating-val"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="main-article" id="main-article">
+      <h2 class="section-title" data-i18n="mainTitle"></h2>
+      <p data-i18n="mainDesc"></p>
+      <ul class="apps-list" id="apps-list"></ul>
+    </section>
+  </main>
+  <footer class="footer neon-board">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <svg class="logo-joystick" width="40" height="32" viewBox="0 0 54 38" fill="none">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2FF6FF" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#2FF6FF" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="shadow" x="-10" y="-10" width="74" height="58">
+                <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2FF6FF" flood-opacity="0.7"/>
+              </filter>
+            </defs>
+            <path d="M6 30 Q2 20 12 10 Q27 0 42 10 Q52 20 48 30 Q45 36 27 36 Q9 36 6 30Z"
+                  fill="url(#glow)" stroke="#2FF6FF" stroke-width="2.5" filter="url(#shadow)" />
+            <circle class="joy-btn joy-btn-left" cx="16" cy="19" r="3.2" fill="#111" stroke="#2FF6FF" stroke-width="1.5"/>
+            <circle class="joy-btn joy-btn-left-glow" cx="16" cy="19" r="6" fill="url(#glow)" opacity="0.7"/>
+            <circle class="joy-btn joy-btn-right" cx="38" cy="19" r="3.2" fill="#111" stroke="#2FF6FF" stroke-width="1.5"/>
+            <circle class="joy-btn joy-btn-right-glow" cx="38" cy="19" r="6" fill="url(#glow)" opacity="0.7"/>
+            <ellipse class="joy-btn joy-btn-center" cx="27" cy="13" rx="2.2" ry="2.2" fill="#2FF6FF" filter="url(#shadow)" />
+            <rect x="13.5" y="25.5" width="5" height="1.2" rx="0.6" fill="#2FF6FF" />
+            <rect x="15.9" y="23.1" width="1.2" height="5" rx="0.6" fill="#2FF6FF" />
+            <path d="M12 10 Q27 0 42 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+            <path d="M6 30 Q2 20 12 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+            <path d="M48 30 Q52 20 42 10" stroke="#2FF6FF" stroke-width="0.7" opacity="0.3"/>
+          </svg>
+          <span class="neon-title">GameLume</span>
+        </div>
+        <div class="footer-copyright" data-i18n="copyright"></div>
+      </div>
+      <div class="footer-block">
+        <span class="footer-section-title" data-i18n="contact"></span>
+        <div class="footer-contact-list">
+          <span>+38 (099) 484-34-60</span>
+          <span>+38 (066) 918-29-37</span>
+          <span>+38 (068) 193-88-02</span>
+        </div>
+        <div class="footer-contact-list">
+          <span>sagadeevkiril@zg2.ukr.education</span>
+          <span>kordukovnikita@zg2.ukr.education</span>
+          <span>cvetkovakatya@zg2.ukr.education</span>
+        </div>
+      </div>
+      <div class="footer-block">
+        <span class="footer-section-title" data-i18n="social"></span>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tsvet_katya0/?locale=ru" target="_blank" class="footer-social">Instagram</a>
+          <a href="https://www.tiktok.com/@zxcjasti0?_t=ZM-8w6SloaTjB1&_r=1" target="_blank" class="footer-social">TikTok</a>
+          <a href="https://www.youtube.com/@Ksaggggg" target="_blank" class="footer-social">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
